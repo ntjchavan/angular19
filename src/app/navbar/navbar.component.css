@@ -1,0 +1,9 @@
+.dropdown-menu {
+  min-width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.badge-adjust {
+  transform: translate(-50%, -20%) !important;
+}
