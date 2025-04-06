@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomStyleDirective } from '../Directives/custom-style.directive';
 import { NgForOf, UpperCasePipe } from '@angular/common';
+import { TestserviceService } from '../Components/Services/testservice.service';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +13,20 @@ export class HomeComponent implements OnInit {
 
   names: string[] = ['Netaji', 'Shivam', 'Punam', 'Pradnya'];
 
-  constructor() {}
+  fbehaviourSubject: string = '';
+    fSubject: string = '';
+  
+    constructor(private testService: TestserviceService) {
+  
+    }
 
   ngOnInit(): void {
-    
+    this.testService.currentMessage$.subscribe((msg)=> {
+      this.fbehaviourSubject = msg;
+    });
+
+    this.testService.currentss$.subscribe((msg) => {
+      this.fSubject = msg;
+    });
   }
 }
