@@ -1,0 +1,9 @@
+<div class="container">
+    <p>parent works!</p>
+    <h5><b>From Child component</b></h5>
+    <div class="child"> {{ parentComponentData}} </div>
+    <app-child (fromChildComponent)="GetDataFromChildComponent($event)" [fromParentComponent]="childComponentData">
+        <div class="content1">This is a ng content1</div>
+        <div id="content2">This is a ng content2</div>
+    </app-child>
+</div>

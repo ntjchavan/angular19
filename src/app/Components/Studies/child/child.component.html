@@ -1,0 +1,14 @@
+<p class="test">child works!</p>
+
+<ng-content select=".content1"></ng-content>
+<ng-content select="#content2"></ng-content>
+
+<h5>
+    <b>From parent component data</b>
+    <div class="parent"> {{ fromParentComponent }} </div>
+</h5>
+
+<div>
+    <div>Send data to parent component</div>
+    <button class="btn btn-primary" (click)="SendDataToParent()">Send data</button>
+</div>
