@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,9 +8,22 @@ import { RouterModule } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   notifications = [
-    { message: 'Hello, Netaji', time: '2m ago' },
+    { message: 'Hello, Netaji', time: '2m ago', isRead: false },
+    { message: 'Welcome Shivam', time: '3m ago', isRead: false }
   ]
+  
+  constructor(){
+
+  }
+
+  ngOnInit(): void {
+    
+  }
+
+  notificationItemSelected(item: string) {
+    console.log(`Notification selected item ${ item }`);
+  }
 
 }

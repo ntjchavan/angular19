@@ -1,1 +1,10 @@
-<p>home works!</p>
+<p appCustomStyle>home works1!</p>
+<p appCustomStyle>Hover over this text to see the effect!</p>
+
+<div>
+    <ul>
+        <li *ngFor="let name of names; let d = index">
+            {{ d }} : {{ name | uppercase }}
+        </li>
+    </ul>
+</div>
