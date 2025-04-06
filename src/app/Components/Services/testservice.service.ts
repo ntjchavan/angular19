@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class TestserviceService {
   private ss = new Subject<string>();
   currentss$ = this.ss.asObservable();
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   UpdateMessage(val: string) {
     this.messageSource.next(val);
@@ -20,6 +21,10 @@ export class TestserviceService {
 
   UpdateSubject(data: string) {
     this.ss.next(data);
+  }
+
+  GetDummyUsers(): Observable<any[]> {
+    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/users');
   }
 
 }
