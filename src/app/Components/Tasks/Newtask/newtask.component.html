@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row g-2">
+        <div>
+            <div class="sm-4 mb-2">
+                <label for="newtask" class="form-label">Add New Task</label>
+                <input type="text" class="form-control" id="newtask" #AddNewTask placeholder="Add task">
+            </div>
+            <div class="sm-4 mb-2">
+                <button type="button" class="btn btn-primary" (click)="AddTasks(AddNewTask.value)">Add task</button>
+            </div>
+        </div>
+    </div>
+    <div class="row g-2">
+        <app-showtask [newTask]="newTask">
+            <p #projectedRefPEle>This is for testing...</p>
+        </app-showtask>
+    </div>
+</div>

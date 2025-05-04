@@ -1,1 +1,24 @@
-<p>aboutus works!</p>
+<div class="container">
+    <h3>Javascript testing</h3>
+    <p>Origing array object</p>
+    <ul>
+        <li *ngFor="let s of studentData$ | async">
+            {{ s.id }} - {{ s.name }} - {{ s.totalMarks }} - {{ s.totalSubject }}
+        </li>
+    </ul>
+    <p>Using map function added avg colum</p>
+    <ul>
+        <li *ngFor="let s of studentDataAvg">
+            {{ s.id }} - {{ s.name }} - {{ s.totalMarks }} - {{ s.totalSubject }} - {{ s.avg }}
+        </li>
+    </ul>
+    <h3> Of observables </h3>
+    <ul>
+        <li *ngFor="let item of obsOf | async">
+            {{ item }}
+        </li>
+    </ul>
+    <h3>Array sum using reduce </h3>
+    <p> {{ arrRedueSum }} </p>
+
+</div>
