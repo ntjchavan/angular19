@@ -11,8 +11,11 @@
         </div>
     </div>
     <div class="row g-2">
-        <app-showtask [newTask]="newTask">
+        <app-showtask [newTask]="newTask" (parentData)="GetChildData($event)">
             <p #projectedRefPEle>This is for testing...</p>
         </app-showtask>
+    </div>
+    <div class="row g2">
+        Data from Child component: {{ dataFromChild }}
     </div>
 </div>

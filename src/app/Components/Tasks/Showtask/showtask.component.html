@@ -11,4 +11,17 @@
     <div class="card" style="width: 18rem;">
         <ng-content></ng-content>
     </div>
+    <div class="card">
+        <div class="card-body">
+            <input type="text" name="Parent" id="Parent" #parentData>
+            <button (click)="SendDataToParent(parentData.value)"  class="mb-3">Send Data to Parent</button>
+        </div>
+    </div>
+    <div class="card">
+        <ul>
+            <li *ngFor="let arr of arrObjectObs$ | async">
+                {{ arr.id }} : {{ arr.name }} : {{ arr.age }}
+            </li>
+        </ul>
+    </div>
 </div>

@@ -11,6 +11,7 @@ import { TaskService } from '../../Services/task.service';
 export class NewtaskComponent implements OnInit {
 
     newTask: string = '';
+    dataFromChild: string = '';
 
     //private taskService: TaskService = inject(TaskService);
 
@@ -25,4 +26,7 @@ export class NewtaskComponent implements OnInit {
         this.newTask = newTask;
     }
 
+    GetChildData(val: string) {
+        this.dataFromChild = val;
+    }
 }

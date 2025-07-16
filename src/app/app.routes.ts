@@ -6,6 +6,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ParentComponent } from './Components/Studies/parent/parent.component';
 import { BindapidataComponent } from './Components/Studies/bindapidata/bindapidata.component';
 import { NewtaskComponent } from './Components/Tasks/Newtask/newtask.component';
+import { DuplicateDivsComponent } from './Components/duplicate-divs/duplicate-divs.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -14,5 +15,6 @@ export const routes: Routes = [
     { path: 'parent', component: ParentComponent},
     { path: 'bindapi', component: BindapidataComponent },
     { path: 'tasks', component: NewtaskComponent },
+    { path: 'divs', component: DuplicateDivsComponent },
     { path: '**', component: NotfoundComponent }
 ];

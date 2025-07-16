@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="header">
+    <h2>Employee Details</h2>
+    <button *ngIf="!isEditMode" (click)="onEdit()" class="edit-btn">Edit</button>
+  </div>
+
+  <div class="body">
+    <!-- Left Section -->
+    <div class="section left">
+      <div *ngFor="let field of leftFields" class="field-row">
+        <span class="label">{{ field.label }}:</span>
+        <span *ngIf="!isEditMode" class="value">{{ getValue(field.path) }}</span>
+        <input
+          *ngIf="isEditMode"
+          [type]="field.type || 'text'"
+          [value]="getValue(field.path)"
+          (input)="setValue(field.path, $any($event.target).value)"
+        />
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="section right">
+      <div *ngFor="let field of rightFields" class="field-row">
+        <span class="label">{{ field.label }}:</span>
+        <span *ngIf="!isEditMode" class="value">{{ getValue(field.path) }}</span>
+        <input
+          *ngIf="isEditMode"
+          [type]="field.type || 'text'"
+          [value]="getValue(field.path)"
+          (input)="setValue(field.path, $any($event.target).value)"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit / Cancel Buttons -->
+  <div *ngIf="isEditMode" class="footer">
+    <button class="submit-btn" (click)="onSubmit()">Submit</button>
+    <button class="cancel-btn" (click)="onCancel()">Cancel</button>
+  </div>
+</div>
